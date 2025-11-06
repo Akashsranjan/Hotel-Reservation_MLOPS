@@ -1,0 +1,6 @@
+mlops/
+mlruns/
+logs/
+MLOPS_PROJECT_1.egg-info/
+*.pyc
+__pycache__/
