@@ -6,14 +6,7 @@ pipeline {
             steps {
                 echo 'Cloning Github repo to Jenkins............'
 
-                checkout([
-                    $class: 'GitSCM',
-                    branches: [[name: '*/main']],
-                    userRemoteConfigs: [[
-                        url: 'https://github.com/Akashsranjan/Hotel-Reservation_MLOPS.git',
-                        credentialsId: 'github-token'
-                    ]]
-                ])
+               checkout scmGit(branches: [[name: '*/main']], extensions: [], userRemoteConfigs: [[credentialsId: 'github-token1', url: 'https://github.com/Akashsranjan/Hotel-Reservation_MLOPS.git']])
             }
         }
     }
