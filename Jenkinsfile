@@ -57,6 +57,9 @@ pipeline {
                         echo "Configuring Docker to use GCR..."
                         gcloud auth configure-docker --quiet
 
+                        echo "Disabling Docker BuildKit to avoid snapshot errors..."
+                        export DOCKER_BUILDKIT=0
+
                         echo "Building Docker image..."
                         docker build -t gcr.io/${GCP_PROJECT}/ml-project:latest .
 
